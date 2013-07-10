@@ -8,31 +8,27 @@
 # Описание алгоритма http://goo.gl/KsqC
 
 
-def dijkstra_shortest_path(graph, start):
+def dijkstra_shortest_path(graph, start_v):
 
     p = {} # наименьшие пути обхода
     u = [] # обработанные вершины
-    p[start] = 0 # инициализация начального пути
-    min_x = None # 
+    p[start_v] = 0 # инициализация начального пути
     
-    while len(u) <= len(graph) and (min_x or len(p) == 1):
-        print "start V: %d, " % (start)
-        for x in graph[start]:
-            if (x not in u and x != start):
-                if (x not in p.keys() or (graph[start][x] + p[start]) < p[x]):
-                    p[x] = graph[start][x] + p[start]
+    while len(u) <= len(graph) and start_v != None:
+        for x in graph[start_v]:
+            if (x not in u and x != start_v):
+                if (x not in p.keys() or (graph[start_v][x] + p[start_v]) < p[x]):
+                    p[x] = graph[start_v][x] + p[start_v]
 
-        u.append(start)
+        u.append(start_v)
 
-        min_v = 0
-        min_x = None
+        min_p = 0
+        min_v = None
         for x in p:
-            # print "x: %d, p[x]: %d, mv %d" % (x, p[x], min_v)
-            if (p[x] < min_v or min_v == 0) and x not in u:
-                    min_x = x
-                    min_v = p[x]
-        start = min_x
-        
+            if (p[x] < min_p or min_p == 0) and x not in u:
+                    min_v = x
+                    min_p = p[x]
+        start_v = min_v
     return p
 
 if __name__ == '__main__':
