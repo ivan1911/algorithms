@@ -15,19 +15,19 @@ def dijkstra_shortest_path(graph, start_v):
     p[start_v] = 0 # инициализация начального пути
     
     while len(u) <= len(graph) and start_v != None:
+        # поиск минимальных путей ко всем ближайшим вершинам
         for x in graph[start_v]:
             if (x not in u and x != start_v):
                 if (x not in p.keys() or (graph[start_v][x] + p[start_v]) < p[x]):
                     p[x] = graph[start_v][x] + p[start_v]
-
+        
         u.append(start_v)
-
-        min_p = 0
+        
+        # поиск следующей вершины с минимальным путем
         min_v = None
         for x in p:
-            if (p[x] < min_p or min_p == 0) and x not in u:
+            if ( (min_v is not None and p[x] < p[min_v]) or min_v == None) and x not in u:
                     min_v = x
-                    min_p = p[x]
         start_v = min_v
     return p
 
