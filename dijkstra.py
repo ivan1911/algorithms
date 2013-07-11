@@ -46,6 +46,7 @@ if __name__ == '__main__':
     ]
     for i in range(1):
         print dijkstra_shortest_path(N, a)
+
 # b in N[a] - смежность
 # len(N[f]) - степень
 # N[a][b] - вес (a,b)

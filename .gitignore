@@ -1,0 +1,27 @@
+.idea
+*.py[co]
+*.DS_Store
+*.sublime-*
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+.idea/
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.toxw
+
+# Built docs
+docs/_build/
