@@ -1,7 +1,7 @@
 Alrgorithm collection
 ===
 
-My own self coded algorithm collection coded on Pythin.
+My own self coded algorithm collection coded on Python.
 Using only wikipeda and not included foreign code.
 
 Algoritm list:
